@@ -159,3 +159,21 @@ body.dark .wallet-premium .wallet-top,body.dark .wallet-premium .wallet-hint{col
 .login-monogram img{width:108px!important;height:108px!important;object-fit:contain!important}
 .wallet-mark{width:52px!important;height:60px!important;object-fit:contain!important}
 @media(prefers-reduced-motion:reduce){.flow-s-logo *,.splash-brand,.splash-motto{animation:none!important;transform:none!important;opacity:1!important;stroke-dashoffset:0!important}}
+
+/* v23 exact mark: splash geometry and layers copied verbatim from shampay-mark.svg.
+   Only movement/opacity changes; final state is identical to the static emblem. */
+.splash .flow-exact-logo{width:min(65vw,255px)!important;height:min(65vw,255px)!important;display:block!important;overflow:visible!important;transform:none!important;opacity:1!important;animation:none!important;filter:drop-shadow(0 8px 12px #0006)!important}
+.splash .flow-exact-logo .exact-gold{animation:exact-gold-enter 1.9s .15s cubic-bezier(.2,.7,.2,1) both!important}
+.splash .flow-exact-logo .exact-teal{animation:exact-teal-enter 1.9s .15s cubic-bezier(.2,.7,.2,1) both!important}
+.splash .flow-exact-logo path{stroke-dasharray:none!important;stroke-dashoffset:0!important;animation:none!important}
+.splash .flow-exact-logo path[stroke="url(#metalGold)"]{stroke:url(#metalGold)!important}
+.splash .flow-exact-logo path[stroke="url(#metalTeal)"]{stroke:url(#metalTeal)!important}
+.splash .flow-exact-logo path[stroke="#77502F"]{stroke:#77502F!important}
+.splash .flow-exact-logo path[stroke="#06373C"]{stroke:#06373C!important}
+.splash .flow-exact-logo path[stroke="#FFF3D5"]{stroke:#FFF3D5!important}
+.splash .flow-exact-logo path[stroke="#9FECE1"]{stroke:#9FECE1!important}
+.splash .flow-exact-logo path[fill="url(#metalGold)"]{fill:url(#metalGold)!important}
+.splash .flow-exact-logo path[fill="url(#metalTeal)"]{fill:url(#metalTeal)!important}
+@keyframes exact-gold-enter{0%{transform:translate(-115px,-75px) scale(.82);opacity:0}65%{opacity:1}100%{transform:none;opacity:1}}
+@keyframes exact-teal-enter{0%{transform:translate(115px,75px) scale(.82);opacity:0}65%{opacity:1}100%{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.splash .flow-exact-logo .exact-gold,.splash .flow-exact-logo .exact-teal{animation:none!important;opacity:1!important;transform:none!important}}
