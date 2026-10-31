@@ -1,0 +1,1 @@
+ShamPay v14: 0–1.8s gold S and leaf draw, 2.1s ShamPay reveal, 2.55s Arabic motto reveal, 3.9s transition. No real account data or business logic changed. Upload files to main root. Test in private Safari.
