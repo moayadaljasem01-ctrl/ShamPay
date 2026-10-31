@@ -1,0 +1,1 @@
+v19: account holder name and DEMO verification first; balance second; eye centered on balance row; remove oversized S watermark; show small matching S logo. v18 functions/localStorage preserved. Upload files to main root.

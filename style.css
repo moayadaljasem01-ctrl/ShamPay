@@ -113,3 +113,28 @@ body.dark .login-wordmark{color:#F1F6F2}
 .login-wordmark span{color:#B98768!important}
 .login-identity p{color:#806C5D!important}
 body.dark .login-wordmark{color:#F1F7F2!important}
+
+/* v19 wallet: hierarchy, aligned eye and single consistent brand mark */
+.hero.wallet-premium{min-height:218px!important;padding:20px 21px 17px!important;display:flex;flex-direction:column;gap:0;isolation:isolate}
+.hero.wallet-premium::after{content:none!important;display:none!important}
+.wallet-identity{display:flex;align-items:center;gap:10px;position:relative;z-index:1;min-width:0}
+.wallet-avatar{width:38px;height:38px;flex:none;border-radius:50%;display:grid;place-items:center;background:#E0ECE6;color:#1D6163}
+.wallet-avatar .ui-icon{width:21px;height:21px}
+.wallet-person{min-width:0;flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.wallet-premium .wallet-name{font-size:15px!important;line-height:1.5;font-weight:750!important;white-space:normal!important;overflow-wrap:anywhere;max-width:100%;color:#243D41!important;margin:0!important}
+.wallet-premium .demo-verified{display:inline-flex!important;align-items:center;gap:4px;font-size:10px!important;margin:0!important;color:#38756E!important;line-height:1.5}
+.wallet-premium .demo-verified .ui-icon{width:14px;height:14px}
+.wallet-mark{width:43px;height:53px;object-fit:contain;flex:none;opacity:.9}
+.wallet-rule{height:1px;background:#CBDDD5;margin:13px 0 12px}
+.wallet-premium .wallet-top{font-size:12px!important;font-weight:600;color:#647E7B!important}
+.wallet-premium .balance-line{display:flex!important;flex-direction:row!important;justify-content:flex-start!important;align-items:center!important;gap:9px!important;direction:rtl!important;min-height:48px;margin-top:3px}
+.wallet-premium .balance-line .amount{margin:0!important;font-size:clamp(24px,6.1vw,34px)!important;line-height:1.35!important;direction:ltr!important;display:inline-flex;align-items:baseline;gap:5px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.wallet-premium .balance-line .amount small{font-size:12px!important}
+.wallet-premium .balance-line .eye{display:grid!important;place-items:center!important;align-self:center!important;width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important;padding:0!important;margin:0!important;transform:none!important;border-radius:50%!important}
+.wallet-premium .balance-line .eye .ui-icon{width:17px!important;height:17px!important;display:block!important}
+.wallet-premium .wallet-hint{font-size:10px!important;margin:6px 0 0!important;color:#708B85!important;line-height:1.6!important}
+body.dark .wallet-premium .wallet-name{color:#F0F7F2!important}
+body.dark .wallet-avatar{background:#25535A;color:#D2E9E0}
+body.dark .wallet-rule{background:#42636A}
+body.dark .wallet-premium .wallet-top,body.dark .wallet-premium .wallet-hint{color:#B6CEC6!important}
+@media(max-width:360px){.wallet-premium .wallet-name{font-size:13px!important}.wallet-mark{width:34px}.wallet-premium .balance-line .amount{font-size:23px!important}}

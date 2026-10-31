@@ -1,1 +1,1 @@
-v17 logo fix: replaced hardcoded login S and green diamond with the same shampay-mark.svg used by header. Cinematic splash uses matching S path. app.js change limited to login HTML; localStorage keys unchanged. Service worker cache bumped to v17. DEMO only.
+v18: Cache-busted app.js, style.css and logo; SW registration bypasses HTTP cache. Login image and header reference same copper S SVG. No account storage changes. On iPhone use Safari private tab to verify. DEMO.
