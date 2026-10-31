@@ -1,0 +1,1 @@
+ShamPay Ivory & Gold v13. Upload the contents of this folder to the root of main on GitHub Pages. This is a DEMO. No real verification or financial services. Existing browser localStorage is not cleared. Safari/PWA hardware testing not performed.
