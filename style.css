@@ -103,3 +103,13 @@ body.dark .login-wordmark{color:#F1F6F2}
 .splash-leaf{stroke:#D5AC8D!important}
 .splash-art path{stroke:url(#copper)!important}
 .splash-art .splash-leaf{stroke:#D5AC8D!important}
+
+/* v17: use identical S logo in login and app header; remove old typographic S and green diamond */
+.login-monogram{display:flex!important;justify-content:center!important;align-items:center!important;width:112px!important;height:112px!important;margin:0 auto 5px!important;font-size:0!important;background:none!important;filter:none!important;line-height:normal!important}
+.login-monogram img{display:block!important;width:112px!important;height:112px!important;object-fit:contain!important;filter:drop-shadow(0 5px 9px #81574220)}
+.login-monogram .leaf{display:none!important}
+.login-identity{padding:18px 12px 16px!important}
+.login-wordmark{font-size:29px!important;color:#153F44!important}
+.login-wordmark span{color:#B98768!important}
+.login-identity p{color:#806C5D!important}
+body.dark .login-wordmark{color:#F1F7F2!important}
