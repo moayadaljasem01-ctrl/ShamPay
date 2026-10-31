@@ -1,0 +1,1 @@
+v20 urgent fix: restore uiIcon and tile helpers accidentally removed in v19. Preserve v19 wallet design, app data, storage key, and services. No data reset.
