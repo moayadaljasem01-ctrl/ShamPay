@@ -139,24 +139,23 @@ body.dark .wallet-rule{background:#42636A}
 body.dark .wallet-premium .wallet-top,body.dark .wallet-premium .wallet-hint{color:#B6CEC6!important}
 @media(max-width:360px){.wallet-premium .wallet-name{font-size:13px!important}.wallet-mark{width:34px}.wallet-premium .balance-line .amount{font-size:23px!important}}
 
-/* v21: two directional money-flow arrows merge to form the S emblem */
-.splash .splash-financial{width:min(68vw,265px)!important;height:min(68vw,265px)!important;overflow:visible!important;animation:flow-settle .7s 2.02s ease-out both!important;filter:drop-shadow(0 9px 13px #021B2080)!important}
-.splash-financial .flow-upper,.splash-financial .flow-lower{transform-box:fill-box;transform-origin:center}
-.splash-financial .flow-upper{animation:flow-upper-in 1.65s .12s cubic-bezier(.22,.72,.17,1) both!important}
-.splash-financial .flow-lower{animation:flow-lower-in 1.65s .12s cubic-bezier(.22,.72,.17,1) both!important}
-.splash-financial .flow-line{stroke-dasharray:400!important;stroke-dashoffset:400!important;animation:flow-draw 1.55s .18s cubic-bezier(.22,.72,.17,1) forwards!important}
-.splash-financial .flow-tip{opacity:0;animation:flow-tip-show .3s 1.48s ease-out forwards!important}
-.splash-financial path{stroke-linecap:round!important;stroke-linejoin:round!important}
-.splash-financial .flow-gold{stroke:url(#goldFlow)!important}
-.splash-financial .flow-teal{stroke:url(#tealFlow)!important}
-.splash-brand{animation:sp15-brand .72s 2.48s cubic-bezier(.18,.8,.2,1) forwards!important}
-.splash-motto{animation:sp15-motto .8s 3.3s cubic-bezier(.2,.75,.2,1) forwards!important}
-@keyframes flow-upper-in{from{transform:translate(-115px,-75px) rotate(-30deg);opacity:.2}70%{opacity:1}to{transform:translate(0,0) rotate(0);opacity:1}}
-@keyframes flow-lower-in{from{transform:translate(115px,75px) rotate(-30deg);opacity:.2}70%{opacity:1}to{transform:translate(0,0) rotate(0);opacity:1}}
-@keyframes flow-draw{to{stroke-dashoffset:0}}
-@keyframes flow-tip-show{to{opacity:1}}
-@keyframes flow-settle{from{transform:scale(.93)}to{transform:scale(1)}}
-.login-monogram img{width:112px!important;height:112px!important;object-fit:contain!important}
+
+/* v22: one geometrically consistent S mark, two distinct animated streams */
+.splash .flow-s-logo{display:block!important;width:min(65vw,255px)!important;height:min(65vw,255px)!important;overflow:visible!important;opacity:1!important;transform:none!important;animation:none!important;filter:drop-shadow(0 8px 12px #0007)!important}
+.flow-s-logo .flow-gold-group,.flow-s-logo .flow-teal-group{transform-origin:150px 150px;opacity:1}
+.flow-s-logo .flow-gold-group{animation:gold-arrive 1.9s .1s cubic-bezier(.16,.8,.2,1) both!important}
+.flow-s-logo .flow-teal-group{animation:teal-arrive 1.9s .1s cubic-bezier(.16,.8,.2,1) both!important}
+.flow-s-logo .flow-track{stroke-dasharray:430!important;stroke-dashoffset:430;animation:stream-draw 1.85s .16s cubic-bezier(.22,.7,.2,1) forwards!important}
+.flow-s-logo .flow-head{opacity:0;animation:head-appear .35s 1.6s ease-out forwards!important}
+.flow-s-logo .flow-gold-group .flow-track{stroke:url(#metalGold)!important}
+.flow-s-logo .flow-teal-group .flow-track{stroke:url(#metalTeal)!important}
+@keyframes gold-arrive{0%{transform:translate(-130px,-95px) rotate(-18deg);opacity:.15}75%{opacity:1}100%{transform:none;opacity:1}}
+@keyframes teal-arrive{0%{transform:translate(130px,95px) rotate(-18deg);opacity:.15}75%{opacity:1}100%{transform:none;opacity:1}}
+@keyframes stream-draw{to{stroke-dashoffset:0}}
+@keyframes head-appear{to{opacity:1}}
+.splash-brand{opacity:0;animation:flow-brand .7s 2.4s ease-out forwards!important}
+.splash-motto{opacity:0;animation:flow-brand .8s 3.2s ease-out forwards!important}
+@keyframes flow-brand{from{opacity:0;transform:translateY(14px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+.login-monogram img{width:108px!important;height:108px!important;object-fit:contain!important}
 .wallet-mark{width:52px!important;height:60px!important;object-fit:contain!important}
-.brand .logo img{object-fit:contain!important}
-@media(prefers-reduced-motion:reduce){.splash-financial,.splash-financial *{animation:none!important;opacity:1!important;transform:none!important;stroke-dashoffset:0!important}.splash-brand,.splash-motto{animation:none!important;opacity:1!important}}
+@media(prefers-reduced-motion:reduce){.flow-s-logo *,.splash-brand,.splash-motto{animation:none!important;transform:none!important;opacity:1!important;stroke-dashoffset:0!important}}

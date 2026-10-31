@@ -1,0 +1,1 @@
+ShamPay v22: S formed by gold and petrol transfer streams; same exact path geometry in splash and icon. Only brand assets and splash CSS changed. No account data migrations. DEMO only.
