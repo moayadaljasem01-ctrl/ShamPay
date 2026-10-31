@@ -1,19 +1,13 @@
-# ShamPay V2 Premium — DEMO
+# ShamPay V3 Premium — DEMO
 
-Bilingual Arabic/English progressive web app (PWA) designed for GitHub Pages, including iPhone home-screen support. **Demonstration only**: no real payments, SMS, identity verification, banking, exchange-rate feeds, or agent agreements.
+Static mobile-first bilingual (Arabic/English) demo wallet. **No real payments, SMS, KYC, banking, or QR payment processing.** All balances and transactions are fictional and stored only in the current browser's localStorage. Do not enter real personal or identity information.
 
-## Install / update
+## Publish to GitHub Pages
 
-Upload all seven files in this folder to the **root** of the `ShamPay` repository on branch `main`: `index.html`, `style.css`, `app.js`, `manifest.webmanifest`, `icon.svg`, `sw.js`, `README.md`. Replace existing files of the same names. GitHub Pages source must be `main / (root)`. Existing `https://moayadaljasem01-ctrl.github.io/ShamPay/` URL stays the same. Wait for deployment, refresh Safari; if an old version persists, clear site data or remove/re-add the home screen shortcut.
+Upload the **contents** of this folder (not the ZIP) to a test repository or a new branch first. GitHub Pages should serve `index.html` from the chosen branch root. When ready, replace the old site files. GitHub history preserves earlier commits.
 
-## Demo access
+## Features
 
-Sign in using +963944000001 and any password of at least 4 characters (not verified, not securely stored). Registration simulates OTP with **123456**, selfie, Syrian ID front/back and funds source **without uploading or storing real documents**. Demo recipients: +963944000002, +963944000003, +963944000004. QR personal and merchant payloads use JSON with demo flag. The QR generator loads via CDN and requires internet the first time; on browsers without `BarcodeDetector`, paste a QR JSON payload manually. iOS Safari may not support BarcodeDetector; scanning is not guaranteed.
+Demo sign-in with any fictional Syrian-format phone and four digits; 3-step demo sign-up; USD/EUR/SYP balances; simulated transfers, fees, receipts, print/PDF, history; decorative non-payment QR; services placeholders; language and theme toggles. No dependencies or remote JavaScript.
 
-## Data / limitations
-
-Demo balances and transactions are stored in browser localStorage, per device/browser; there is no inter-user transfer or server. The user can share receipt text, export CSV, generate receipt PNG via canvas, and use Safari Print > Share > Save to Files for PDF. All receipts are marked DEMO / not proof of payment. Merchant dynamic QR payload expires after 15 minutes for simulation; JSON and Base64 are not encryption and the payload is not signed. No sensitive documents or credentials should be entered.
-
-## Production prerequisites
-
-Licensed financial operations and compliance for Syria; backend, database, authentication, SMS provider, encrypted identity-document storage, human review, privacy notices, consent, audit logs, anti-fraud controls, signed QR tokens, replay protection, payment ledger, reconciliations, exchange-rate providers, and tested Safari-compatible QR scanner. Demo does not constitute a production-ready financial product.
+The icon is SVG; some iOS versions may not use it for the home-screen icon. For production, generate PNG icon variants. Do not deploy as a real financial service without legal, security and backend work.
