@@ -1,1 +1,1 @@
-ShamPay Ivory & Gold v13. Upload the contents of this folder to the root of main on GitHub Pages. This is a DEMO. No real verification or financial services. Existing browser localStorage is not cleared. Safari/PWA hardware testing not performed.
+ShamPay v16: petrol #073F43, soft ivory #F5F7F3, muted copper #C29A79. Original metallic leaf-tipped S mark used in splash, header and PWA icons. v15 cinematic intro timing retained. Local storage and app.js unchanged. DEMO only.

@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#104b3e"/><circle cx="256" cy="256" r="180" fill="none" stroke="#cba85a" stroke-width="10"/><text x="256" y="345" text-anchor="middle" font-family="Georgia,serif" font-size="280" fill="#cba85a">S</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="ShamPay">
+<defs><linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#815742"/><stop offset=".25" stop-color="#F4D6B5"/><stop offset=".52" stop-color="#B98768"/><stop offset=".75" stop-color="#F7D8B8"/><stop offset="1" stop-color="#9A6C54"/></linearGradient></defs>
+<path d="M227 47 C208 53 192 68 184 92 C167 80 147 77 128 83 C107 89 96 106 99 123 C103 143 135 150 162 163 C198 180 211 205 197 230 C180 260 130 265 91 242 C118 251 158 240 164 218 C170 200 151 191 119 177 C77 158 63 134 72 106 C86 65 136 54 180 75 C191 58 209 46 227 47 Z" fill="url(#metal)"/>
+<path d="M228 43 C255 41 266 31 270 18 C273 49 255 69 217 71 C218 58 222 49 228 43 Z" fill="url(#metal)"/>
+<path d="M119 94 C97 105 93 124 108 137" fill="none" stroke="#FFE8CA" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+<path d="M186 219 C178 239 155 248 132 248" fill="none" stroke="#FFE5C5" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+</svg>
