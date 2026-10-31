@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092B25">
+  <title>وكلاء شام باي | ShamPay</title>
+
+  <style>
+    :root {
+      --green: #092B25;
+      --green2: #14624D;
+      --gold: #C7A765;
+      --ivory: #F7F5EF;
+      --muted: #73837D;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system,
+                   "Segoe UI", sans-serif;
+      background: var(--ivory);
+      color: var(--green);
+    }
+
+    header {
+      background: linear-gradient(
+        135deg, #092B25, #14624D
+      );
+      color: white;
+      padding: 28px 20px 36px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: auto;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .demo {
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 5px 11px;
+      border-radius: 30px;
+      font-size: 12px;
+    }
+
+    h1 {
+      margin: 28px 0 8px;
+      font-size: 28px;
+    }
+
+    header p {
+      color: #D9E5DF;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .search {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #D9E3DC;
+      border-radius: 16px;
+      background: white;
+      font: inherit;
+      outline-color: var(--green2);
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 18px 0;
+    }
+
+    .filter {
+      white-space: nowrap;
+      border: 1px solid #D7E2DB;
+      border-radius: 30px;
+      padding: 10px 17px;
+      background: white;
+      color: var(--green);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .filter.active {
+      background: var(--green2);
+      color: white;
+      border-color: var(--green2);
+    }
+
+    .count {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .agent {
+      background: white;
+      border: 1px solid #E3E9E4;
+      border-radius: 22px;
+      padding: 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 20px #092B2508;
+    }
+
+    .agent-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: #E5F1EA;
+      border-radius: 15px;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .agent h2 {
+      font-size: 17px;
+      margin: 0 0 5px;
+    }
+
+    .city {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .services {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 18px 0;
+    }
+
+    .service {
+      background: #F0F5F1;
+      color: var(--green2);
+      border-radius: 9px;
+      padding: 7px 10px;
+      font-size: 12px;
+    }
+
+    .action {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: var(--green2);
+      color: white;
+      padding: 13px;
+      border-radius: 13px;
+      font-weight: 700;
+    }
+
+    .notice {
+      background: #FFF7E5;
+      border: 1px solid #E8D4A3;
+      border-radius: 15px;
+      padding: 14px;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 22px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 35px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="top">
+      <div class="logo">شام باي ✦</div>
+      <span class="demo">DEMO</span>
+    </div>
+
+    <h1>وكلاء شام باي</h1>
+    <p>
+      اكتشف نقاط الخدمة التجريبية
+      وابحث حسب المدينة أو اسم الوكيل.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <input
+    id="search"
+    class="search"
+    type="search"
+    placeholder="ابحث عن مدينة أو وكيل..."
+    aria-label="البحث عن وكيل"
+  >
+
+  <div class="filters" id="filters">
+    <button class="filter active"
+            data-city="الكل">الكل</button>
+    <button class="filter"
+            data-city="دمشق">دمشق</button>
+    <button class="filter"
+            data-city="حلب">حلب</button>
+    <button class="filter"
+            data-city="حمص">حمص</button>
+    <button class="filter"
+            data-city="اللاذقية">اللاذقية</button>
+  </div>
+
+  <p id="count" class="count"></p>
+  <section id="agents" aria-live="polite"></section>
+
+  <div class="notice">
+    <strong>تنويه مهم:</strong>
+    جميع الوكلاء والأسماء والمواقع في هذه
+    الصفحة أمثلة افتراضية لأغراض العرض فقط.
+    لا توجد نقاط خدمة حقيقية أو عمليات مالية
+    فعلية مرتبطة بهذه الصفحة.
+  </div>
+
+</main>
+
+<script>
+  "use strict";
+
+  // بيانات افتراضية للتجربة فقط.
+  const agents = [
+    {
+      name: "مركز الشام التجريبي",
+      city: "دمشق",
+      area: "المزة",
+      services: ["إيداع تجريبي", "سحب تجريبي"]
+    },
+    {
+      name: "نقطة حلب التجريبية",
+      city: "حلب",
+      area: "الفرقان",
+      services: ["إيداع تجريبي", "استعلام"]
+    },
+    {
+      name: "مركز حمص التجريبي",
+      city: "حمص",
+      area: "الإنشاءات",
+      services: ["سحب تجريبي", "استعلام"]
+    },
+    {
+      name: "نقطة الساحل التجريبية",
+      city: "اللاذقية",
+      area: "المشروع العاشر",
+      services: ["إيداع تجريبي", "سحب تجريبي"]
+    }
+  ];
+
+  let selectedCity = "الكل";
+
+  const search = document.getElementById("search");
+  const list = document.getElementById("agents");
+  const count = document.getElementById("count");
+
+  function renderAgents() {
+    const query = search.value.trim().toLowerCase();
+
+    const filtered = agents.filter(agent => {
+      const matchesCity =
+        selectedCity === "الكل" ||
+        agent.city === selectedCity;
+
+      const text = [
+        agent.name,
+        agent.city,
+        agent.area
+      ].join(" ").toLowerCase();
+
+      return matchesCity && text.includes(query);
+    });
+
+    count.textContent =
+      "عدد النتائج: " + filtered.length;
+
+    list.replaceChildren();
+
+    if (!filtered.length) {
+      const empty = document.createElement("p");
+      empty.className = "empty";
+      empty.textContent = "لا توجد نتائج مطابقة للبحث.";
+      list.appendChild(empty);
+      return;
+    }
+
+    filtered.forEach(agent => {
+      const card = document.createElement("article");
+      card.className = "agent";
+
+      const head = document.createElement("div");
+      head.className = "agent-head";
+
+      const avatar = document.createElement("div");
+      avatar.className = "avatar";
+      avatar.textContent = "🏪";
+
+      const details = document.createElement("div");
+
+      const title = document.createElement("h2");
+      title.textContent = agent.name;
+
+      const city = document.createElement("div");
+      city.className = "city";
+      city.textContent =
+        agent.city + " - " + agent.area;
+
+      details.append(title, city);
+      head.append(avatar, details);
+
+      const services = document.createElement("div");
+      services.className = "services";
+
+      agent.services.forEach(service => {
+        const tag = document.createElement("span");
+        tag.className = "service";
+        tag.textContent = service;
+        services.appendChild(tag);
+      });
+
+      const action = document.createElement("a");
+      action.className = "action";
+      action.href = "#";
+      action.textContent = "عرض تفاصيل الوكيل";
+      action.addEventListener("click", event => {
+        event.preventDefault();
+        alert(
+          agent.name + "\n" +
+          agent.city + " - " + agent.area +
+          "\n\nوكيل افتراضي للعرض فقط."
+        );
+      });
+
+      card.append(head, services, action);
+      list.appendChild(card);
+    });
+  }
+
+  search.addEventListener("input", renderAgents);
+
+  document
+    .getElementById("filters")
+    .addEventListener("click", event => {
+      const button = event.target.closest(
+        "button[data-city]"
+      );
+
+      if (!button) return;
+
+      selectedCity = button.dataset.city;
+
+      document
+        .querySelectorAll(".filter")
+        .forEach(item => {
+          item.classList.toggle(
+            "active",
+            item === button
+          );
+        });
+
+      renderAgents();
+    });
+
+  renderAgents();
+</script>
+
+</body>
+</html>
