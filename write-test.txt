@@ -1,1 +1,2 @@
 ShamPay branch write test OK
+Manual write test OK
