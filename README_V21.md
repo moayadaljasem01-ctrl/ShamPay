@@ -1,0 +1,1 @@
+ShamPay v21: original double-arrow S emblem. Gold and teal arrows converge to form S in animated splash; same emblem in login, header, wallet and icons. App logic unchanged apart from image cache-busting. No localStorage migration. DEMO only.
