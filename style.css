@@ -3,3 +3,20 @@
 
 .splash{position:fixed;inset:0;z-index:9999;background:linear-gradient(155deg,#092b25,#14624d);color:#f7f5ef;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;transition:opacity .45s ease,visibility .45s ease;padding:24px}.splash.splash-off{opacity:0;visibility:hidden;pointer-events:none}.splash-mark{width:88px;height:88px;border:2px solid #c7a765;border-radius:24px;display:grid;place-items:center;color:#c7a765;font:700 58px Georgia,serif;box-shadow:0 14px 50px #0003}.splash h1{font-size:38px;letter-spacing:-1px;margin:6px 0 0}.splash h1 span{color:#c7a765}.splash p{margin:0;font-size:18px}.splash small{color:#c7a765;letter-spacing:1px}.boot-fallback{text-align:center;padding:55px 18px;line-height:1.8}.boot-help{font-size:13px;opacity:.75}
 @media(prefers-reduced-motion:reduce){.splash{transition:none}}
+
+/* ShamPay cinematic splash — standalone full-screen intro */
+.splash{background:radial-gradient(ellipse at 50% 42%,#14513f 0%,#092b25 53%,#031813 100%);overflow:hidden;gap:7px;isolation:isolate}
+.splash::before{content:"";position:absolute;inset:-45%;background:conic-gradient(from 30deg,transparent 0 35%,#c7a76514 43%,transparent 50% 75%,#c7a7650a 85%,transparent 95%);animation:splash-turn 8s linear infinite;z-index:-1}
+.splash-particles{position:absolute;inset:0;background-image:radial-gradient(circle,#e9c780 1px,transparent 2px);background-size:33px 47px;opacity:.12;animation:splash-stars 2.6s ease-in-out both;pointer-events:none}
+.splash-art{width:min(72vw,290px);height:min(72vw,290px);filter:drop-shadow(0 0 14px #e2b96550)}
+.splash-art path{fill:none;stroke:url(#gold);stroke-linecap:round;stroke-linejoin:round}
+.splash-trail{stroke-width:5;stroke-dasharray:420;stroke-dashoffset:420;animation:splash-draw 1.5s ease-out forwards;filter:drop-shadow(0 0 7px #f4d18c)}
+.splash-letter{stroke-width:16;stroke-dasharray:460;stroke-dashoffset:460;animation:splash-draw 1.6s .45s ease-in-out forwards}
+.splash-leaf{stroke:#4c9b74!important;stroke-width:9;stroke-dasharray:130;stroke-dashoffset:130;animation:splash-draw .8s 1.15s ease-out forwards}
+.splash-title{font-size:clamp(39px,10vw,56px);font-weight:800;letter-spacing:-2px;opacity:0;animation:splash-rise .65s 1.35s ease-out forwards}
+.splash-title span{color:#c7a765}
+.splash-tagline,.splash-syria,.splash small{opacity:0;animation:splash-rise .5s 1.65s ease-out forwards}
+.splash-syria{font-size:14px!important;color:#e5d6b5}.splash small{font-size:12px}
+.splash-progress{width:145px;height:4px;border-radius:5px;background:#ffffff26;overflow:hidden;margin:18px auto 0}.splash-progress i{display:block;width:100%;height:100%;background:#d9b979;transform:scaleX(0);transform-origin:right;animation:splash-load 2.7s linear forwards}
+@keyframes splash-draw{to{stroke-dashoffset:0}}@keyframes splash-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}@keyframes splash-load{to{transform:scaleX(1)}}@keyframes splash-stars{0%{opacity:0}60%{opacity:.2}100%{opacity:.1}}@keyframes splash-turn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.splash-art path{stroke-dashoffset:0;animation:none}.splash-title,.splash-tagline,.splash-syria,.splash small{opacity:1;animation:none}.splash-progress i{transform:none;animation:none}.splash::before,.splash-particles{animation:none}}
