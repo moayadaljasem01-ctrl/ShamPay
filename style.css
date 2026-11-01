@@ -336,3 +336,12 @@ body { min-height: 100%; }
 @media print {
   #content { padding-bottom: 0; }
 }
+
+/* v35.3: iPhone Safari / standalone PWA fixed navigation and bottom clearance */
+:root { --sp-nav-height: 64px; --sp-nav-clearance: 176px; }
+html { scroll-padding-bottom: calc(var(--sp-nav-clearance) + env(safe-area-inset-bottom, 0px)); }
+#app { padding-bottom: 0 !important; min-height: 100dvh; }
+#content { box-sizing: border-box; min-height: 0; padding-bottom: calc(var(--sp-nav-clearance) + env(safe-area-inset-bottom, 0px)) !important; }
+.nav { position: fixed !important; inset: auto 0 0 0 !important; margin: 0 auto env(safe-area-inset-bottom, 0px) !important; transform: none !important; z-index: 1000 !important; height: var(--sp-nav-height); max-height: var(--sp-nav-height); }
+@media (max-width: 360px) { :root { --sp-nav-height: 60px; } }
+@media print { #content { padding-bottom: 0 !important; } }
