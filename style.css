@@ -301,3 +301,38 @@ body.dark .nav{background:linear-gradient(160deg,rgba(46,64,63,.9),rgba(5,19,23,
   .nav button{height:50px}
   .nav button .v35-tab-icon .ui-icon{width:21px;height:21px}
 }
+
+/* v35.2 — fixed bottom navigation + genuine scroll clearance.
+   Padding must be on the scrolling CONTENT, not only #app. */
+html { scroll-padding-bottom: calc(156px + env(safe-area-inset-bottom, 0px)); }
+body { min-height: 100%; }
+#app { padding-bottom: 0; min-height: 100dvh; }
+#content {
+  display: flow-root;
+  padding-bottom: calc(156px + env(safe-area-inset-bottom, 0px));
+  scroll-margin-bottom: calc(156px + env(safe-area-inset-bottom, 0px));
+}
+#content > :last-child { margin-bottom: 0; }
+.nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  margin-inline: auto;
+  transform: none;
+  z-index: 1000;
+  width: min(calc(100% - 20px), 500px);
+  height: 64px;
+  max-height: 64px;
+  padding: 4px 5px;
+  /* Keep glass design; reserve iPhone safe-area inside the bottom placement. */
+  margin-bottom: env(safe-area-inset-bottom, 0px);
+}
+.toast { bottom: calc(86px + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 360px) {
+  .nav { width: calc(100% - 12px); height: 60px; max-height: 60px; }
+}
+@media print {
+  #content { padding-bottom: 0; }
+}
