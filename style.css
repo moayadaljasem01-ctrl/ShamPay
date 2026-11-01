@@ -345,3 +345,43 @@ html { scroll-padding-bottom: calc(var(--sp-nav-clearance) + env(safe-area-inset
 .nav { position: fixed !important; inset: auto 0 0 0 !important; margin: 0 auto env(safe-area-inset-bottom, 0px) !important; transform: none !important; z-index: 1000 !important; height: var(--sp-nav-height); max-height: var(--sp-nav-height); }
 @media (max-width: 360px) { :root { --sp-nav-height: 60px; } }
 @media print { #content { padding-bottom: 0 !important; } }
+
+/* v36 Premium Auth: hierarchy, accessible single-input six-cell PIN, mock KYC */
+.auth-card .btn.auth-primary{
+ display:block;width:100%;background:linear-gradient(120deg,#9d7437,#e0bf7d 52%,#a17a3e)!important;
+ color:#241d11!important;border:1px solid #c5a062!important;
+ box-shadow:0 9px 22px rgba(145,100,42,.22),inset 0 1px rgba(255,255,255,.4);
+ font-weight:800;min-height:50px;border-radius:15px;margin-top:14px;
+}
+.auth-card .btn.auth-outline{
+ display:block;width:100%;background:rgba(190,159,103,.065)!important;
+ border:1px solid rgba(183,145,76,.6)!important;color:var(--ink)!important;
+ box-shadow:inset 0 1px rgba(255,255,255,.14);min-height:48px;border-radius:15px;
+}
+.auth-text-link{
+ display:block;margin:12px auto 14px;border:0;background:transparent;
+ color:var(--green2);font-size:13px;text-decoration:underline;
+ text-underline-offset:4px;padding:9px 12px;
+}
+body.dark .auth-text-link{color:#e5c88b}
+.pin-matrix-label{display:block;margin:15px 0 9px;font-size:13px;font-weight:700;color:var(--ink)}
+.pin-matrix{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(5px,2vw,10px);direction:ltr;isolation:isolate;min-height:53px;margin-bottom:14px}
+.pin-cell{height:53px;border:1px solid rgba(170,137,75,.4);border-radius:12px;background:var(--paper);box-shadow:inset 0 1px 3px rgba(0,0,0,.025);display:grid;place-items:center;font-size:26px;font-weight:800;color:var(--ink);transition:background .16s,border-color .16s,box-shadow .16s}
+.pin-cell.filled{border-color:#bc985b;background:linear-gradient(150deg,rgba(228,202,147,.24),rgba(182,146,76,.08));box-shadow:0 0 0 1px rgba(190,153,84,.12),inset 0 1px rgba(255,255,255,.2)}
+.pin-matrix.focused .pin-cell.current{border-color:#c7a060;box-shadow:0 0 0 2px rgba(195,158,88,.2)}
+.pin-matrix-input{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:2!important;opacity:.015!important;cursor:text!important;border:0!important;box-shadow:none!important;letter-spacing:0!important;font-size:16px!important;direction:ltr}
+.pin-matrix-input:focus{outline:none!important}
+.pin-matrix:focus-within{outline:2px solid rgba(197,161,95,.25);outline-offset:3px;border-radius:12px}
+.kyc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.kyc-grid .kyc-action{position:relative;overflow:hidden;min-width:0;min-height:136px;padding:13px 7px;border:1px solid rgba(186,150,86,.36);border-radius:16px;background:var(--paper);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;box-shadow:0 5px 16px rgba(27,49,42,.07)}
+.kyc-action .kyc-icon{display:grid;place-items:center;flex:none}
+.kyc-action small{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+.kyc-action .kyc-status{font-size:10px;color:var(--muted);line-height:1.35}
+.kyc-action.kyc-done{background:linear-gradient(150deg,rgba(18,133,98,.16),rgba(17,104,85,.07));border-color:#24976e;box-shadow:0 0 0 1px rgba(24,141,99,.12)}
+.kyc-action.kyc-done .kyc-status{color:#19835c;font-weight:800}
+body.dark .kyc-action.kyc-done .kyc-status{color:#72e6b6}
+.kyc-action .kyc-scan-line{display:none;position:absolute;left:8%;right:8%;top:0;height:2px;background:#58dfb0;box-shadow:0 0 12px #58dfb0}
+.kyc-action.kyc-scanning .kyc-scan-line{display:block;animation:kyc-scan 950ms linear 1}
+@keyframes kyc-scan{from{top:8%}to{top:90%}}
+@media(max-width:355px){.pin-cell{height:46px;border-radius:9px}.kyc-grid{gap:5px}.kyc-grid .kyc-action{padding:10px 4px}}
+@media(prefers-reduced-motion:reduce){.kyc-action.kyc-scanning .kyc-scan-line{animation:none;top:50%}.pin-cell{transition:none}}
