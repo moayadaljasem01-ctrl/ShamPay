@@ -189,3 +189,16 @@ body.dark .wallet-premium .wallet-top,body.dark .wallet-premium .wallet-hint{col
 
 /* v29 demo screens */
 .qr-amount-label{width:100%;text-align:start;margin:18px 0 8px}.qr-amount-label input{width:100%;box-sizing:border-box}.activity-entry{margin-bottom:10px}.qr svg{max-width:100%;height:auto}
+
+/* v31 — mobile tactile polish, accessible quick filters and receipt */
+button, .tile, .settings-item, .card[data-action] { -webkit-tap-highlight-color: transparent; touch-action: manipulation; transition: transform 145ms ease, box-shadow 145ms ease, background-color 145ms ease, opacity 145ms ease; }
+button:active, .tile:active, .settings-item:active, .card[data-action]:active { transform: scale(.975); opacity:.88; }
+button:focus-visible, .tile:focus-visible, .settings-item:focus-visible { outline: 3px solid #cfa35b; outline-offset: 3px; }
+.v31-filter-chips { display:flex; gap:8px; overflow-x:auto; padding:3px 1px 11px; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.v31-filter-chips::-webkit-scrollbar { display:none; }
+.v31-chip { flex:0 0 auto; border:1px solid rgba(16,111,111,.24); border-radius:999px; padding:9px 14px; font-size:13px; font-weight:700; background:transparent; color:inherit; white-space:nowrap; }
+.v31-chip.selected { background:#0b6264; color:white; border-color:#0b6264; box-shadow:0 3px 10px rgba(0,0,0,.10); }
+.v31-receipt { border-radius:22px; box-shadow:0 12px 35px rgba(0,0,0,.08); }
+.v31-success-icon { display:grid; place-items:center; width:56px; height:56px; margin:0 auto 12px; border-radius:50%; background:#e3f5e9; color:#167342; font-size:31px; font-weight:800; }
+@media (prefers-reduced-motion:reduce) { button,.tile,.settings-item,.card[data-action] { transition:none !important; } button:active,.tile:active,.settings-item:active,.card[data-action]:active { transform:none !important; } }
+@media print { .v31-receipt { box-shadow:none; } }
