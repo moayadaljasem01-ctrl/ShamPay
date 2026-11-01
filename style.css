@@ -261,3 +261,43 @@ body.dark .nav{background:linear-gradient(160deg,rgba(46,64,63,.9),rgba(5,19,23,
 @media(max-width:360px){.nav{width:calc(100% - 12px);border-radius:24px}.nav button .v35-tab-label{font-size:9px}.nav button .v35-tab-icon .ui-icon{width:23px;height:23px}}
 @media(prefers-reduced-motion:reduce){.nav button,.nav button .v35-tab-icon{transition:none}.v35-liquid-lens{will-change:auto}}
 @media print{.nav{display:none!important}}
+
+/* v35.1 — compact, bottom-anchored liquid glass; no content obscured */
+#app{padding-bottom:calc(102px + env(safe-area-inset-bottom,0px))}
+.nav{
+  bottom:calc(4px + env(safe-area-inset-bottom,0px));
+  width:min(calc(100% - 20px),500px);
+  height:64px;min-height:0;max-height:64px;
+  padding:4px 5px;
+  border-radius:22px;
+  align-items:center;
+  overflow:hidden;
+}
+.nav button{
+  min-height:0;height:54px;
+  padding:4px 1px 3px;
+  gap:2px;
+  border-radius:17px;
+}
+.nav button .v35-tab-icon{
+  width:26px;height:26px;
+}
+.nav button .v35-tab-icon .ui-icon{
+  width:23px;height:23px;
+}
+.nav button .v35-tab-label{
+  font-size:10px;line-height:1.15;
+}
+.nav button.center .v35-tab-icon{
+  width:26px;height:26px;
+}
+.v35-liquid-lens{
+  top:4px;height:calc(100% - 8px);
+  border-radius:18px;
+}
+.v35-lens-core{border-radius:15px}
+@media(max-width:360px){
+  .nav{width:calc(100% - 12px);height:60px;max-height:60px;border-radius:20px}
+  .nav button{height:50px}
+  .nav button .v35-tab-icon .ui-icon{width:21px;height:21px}
+}
