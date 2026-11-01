@@ -227,3 +227,15 @@ body.dark .services-grid .tile{border-color:rgba(216,183,116,.28);box-shadow:0 6
 body.dark .services-grid .tile .symbol{background:linear-gradient(145deg,#20484b,#15383b);color:#d8bd83;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
 @media(max-width:360px){.services-grid{gap:9px}.services-grid .tile{min-height:120px;padding:13px 6px;gap:9px}.services-grid .tile .symbol{width:46px;height:46px}}
 @media(prefers-reduced-motion:reduce){.services-grid .tile{transition:none}.services-grid .tile:active{transform:none}}
+
+/* v34: transfers and transaction record visual consistency */
+.grid:not(.services-grid) .tile{border:1px solid rgba(188,151,83,.27);box-shadow:0 7px 22px rgba(12,59,53,.055)}
+.grid:not(.services-grid) .tile .symbol{background:linear-gradient(145deg,#edf3ee,#e3eee8);color:#145e61}
+.grid:not(.services-grid) .tile .symbol .ui-icon{width:29px;height:29px}
+.v34-tx{align-items:center;gap:12px;border-color:rgba(188,151,83,.22);box-shadow:0 5px 18px rgba(14,60,52,.045)}
+.v34-tx-info{min-width:0;flex:1}.v34-tx-info strong{overflow-wrap:anywhere}.v34-ref{font-size:10px;letter-spacing:.02em;opacity:.65;overflow-wrap:anywhere;margin-top:5px;text-align:start}.v34-tx-value{text-align:end;flex-shrink:0}.v34-positive{color:#18785b}
+.v34-demo-receive{border:1px solid rgba(188,151,83,.3);box-shadow:0 7px 22px rgba(14,60,52,.05)}.v34-demo-receive h3{margin:0 0 8px}
+body.dark .grid:not(.services-grid) .tile,body.dark .v34-tx,body.dark .v34-demo-receive{border-color:rgba(216,183,116,.26)}
+body.dark .grid:not(.services-grid) .tile .symbol{background:#20484b;color:#d8bd83}
+body.dark .v34-positive{color:#87d9ae}
+@media(max-width:360px){.v34-tx{gap:8px}.v34-ref{font-size:9px}}
