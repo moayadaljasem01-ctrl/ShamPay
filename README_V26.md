@@ -1,0 +1,1 @@
+ShamPay DEMO v26 — Unified Account screen. Account details and all settings appear on one scrollable page. Old settings action is an alias to Account. No financial backend changes. Upload all files to GitHub Pages, not just index.html.

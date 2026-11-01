@@ -1,0 +1,1 @@
+v18: Cache-busted app.js, style.css and logo; SW registration bypasses HTTP cache. Login image and header reference same copper S SVG. No account storage changes. On iPhone use Safari private tab to verify. DEMO.

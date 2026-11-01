@@ -1,0 +1,1 @@
+v23: splash SVG uses exactly the same geometry, layers, metallic gradients and arrowheads as shampay-mark.svg. Two colored components enter separately and settle to the identical static logo. SW registration updated to v23. No localStorage changes.
