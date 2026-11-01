@@ -214,3 +214,16 @@ button:focus-visible, .tile:focus-visible, .settings-item:focus-visible { outlin
 .v32-silver-card {background:linear-gradient(135deg,#475861 0%,#a7b6bb 26%,#5a6c74 56%,#d2dce0 82%,#647981 100%);}
 .v32-card-top,.v32-card-bottom{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.v32-card-top strong{font-size:22px;letter-spacing:-.7px}.v32-card-top strong span{color:#fff0c6}.v32-card-contactless{font-size:24px;opacity:.9}.v32-card-chip{width:42px;height:29px;border:1px solid rgba(255,255,255,.65);border-radius:7px;background:linear-gradient(120deg,rgba(255,255,255,.5),rgba(255,255,255,.08));margin-top:12px}.v32-card-number{font-size:clamp(17px,5vw,23px);font-weight:700;letter-spacing:2px;white-space:nowrap;margin:18px 0}.v32-card-bottom{align-items:flex-end}.v32-card-bottom div{display:flex;flex-direction:column;gap:4px;min-width:0}.v32-card-bottom small{font-size:10px;opacity:.85}.v32-card-bottom strong{font-size:13px;overflow-wrap:anywhere}.v32-card-demo{font-size:10px;letter-spacing:.6px;white-space:nowrap;background:rgba(0,0,0,.2);padding:6px;border-radius:5px}.v32-card-disclaimer{line-height:1.7}
 @media(prefers-reduced-motion:reduce){.header .brand .logo::after{animation:none;display:none}}
+
+/* v33: Services — distinct SVGs, quiet metallic edging, balanced mobile grid. */
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,3vw,14px);align-items:stretch}
+.services-grid .tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:0;min-height:132px;padding:18px 9px 16px;border:1px solid rgba(184,145,78,.30);border-radius:22px;background:var(--paper);box-shadow:0 5px 16px rgba(13,55,49,.055),0 1px 2px rgba(129,96,46,.045);color:var(--ink);-webkit-tap-highlight-color:transparent;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background-color .16s ease}
+.services-grid .tile .symbol{width:51px;height:51px;flex:none;margin:0;display:grid;place-items:center;border-radius:16px;background:linear-gradient(145deg,#f4f5ed,#e8efe9);color:#125d61;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 2px 6px rgba(13,55,49,.04)}
+.services-grid .tile .symbol .ui-icon{width:28px;height:28px;stroke-width:1.85}
+.services-grid .tile strong{font-size:clamp(12px,3.6vw,14px);font-weight:700;line-height:1.45;overflow-wrap:anywhere;text-align:center}
+.services-grid .tile:active{transform:scale(.975);border-color:rgba(183,139,64,.70);background:var(--paper);box-shadow:0 2px 9px rgba(13,55,49,.05)}
+.services-grid .tile:focus-visible{outline:3px solid #cfa35b;outline-offset:3px}
+body.dark .services-grid .tile{border-color:rgba(216,183,116,.28);box-shadow:0 6px 18px rgba(0,0,0,.16)}
+body.dark .services-grid .tile .symbol{background:linear-gradient(145deg,#20484b,#15383b);color:#d8bd83;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+@media(max-width:360px){.services-grid{gap:9px}.services-grid .tile{min-height:120px;padding:13px 6px;gap:9px}.services-grid .tile .symbol{width:46px;height:46px}}
+@media(prefers-reduced-motion:reduce){.services-grid .tile{transition:none}.services-grid .tile:active{transform:none}}
