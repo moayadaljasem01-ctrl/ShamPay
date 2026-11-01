@@ -239,3 +239,25 @@ body.dark .grid:not(.services-grid) .tile,body.dark .v34-tx,body.dark .v34-demo-
 body.dark .grid:not(.services-grid) .tile .symbol{background:#20484b;color:#d8bd83}
 body.dark .v34-positive{color:#87d9ae}
 @media(max-width:360px){.v34-tx{gap:8px}.v34-ref{font-size:9px}}
+
+/* v35 · ShamPay Liquid Glass navigation — iOS PWA optical approximation */
+#app{padding-bottom:calc(108px + env(safe-area-inset-bottom,0px))}
+.nav{position:fixed;left:50%;bottom:calc(8px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(calc(100% - 22px),500px);min-height:78px;padding:7px 5px;display:flex;align-items:stretch;justify-content:space-between;gap:0;border:1px solid rgba(240,220,176,.3);border-radius:29px;background:linear-gradient(165deg,rgba(68,77,76,.87),rgba(13,28,31,.93) 44%,rgba(7,26,30,.94));-webkit-backdrop-filter:blur(26px) saturate(175%);backdrop-filter:blur(26px) saturate(175%);box-shadow:inset 0 1px 1px rgba(255,255,255,.28),inset 0 -1px 0 rgba(0,0,0,.35),0 13px 36px rgba(0,18,22,.32),0 3px 12px rgba(0,0,0,.16);isolation:isolate;overflow:hidden;z-index:20}
+.nav::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(112deg,rgba(255,255,255,.16),transparent 28%,transparent 72%,rgba(214,181,113,.13));z-index:0}
+.nav button{position:relative;z-index:2;flex:1 1 20%;min-width:0;min-height:64px;border:0;background:transparent!important;color:rgba(231,239,236,.72)!important;border-radius:23px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:7px 1px 5px;font-size:10px;font-weight:550;line-height:1.15;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:color .24s ease,transform .28s cubic-bezier(.2,.8,.2,1)}
+.nav button .v35-tab-icon{width:30px;height:30px;display:grid;place-items:center;margin:0!important;background:none!important;color:inherit!important;border-radius:0!important;transition:transform .38s cubic-bezier(.2,.8,.2,1),filter .3s ease}
+.nav button .v35-tab-icon .ui-icon{width:25px;height:25px;stroke-width:1.85}
+.nav button .v35-tab-label{display:block;height:auto;margin:0!important;font-size:10px;white-space:nowrap;color:inherit!important}
+.nav button.active{color:#F4D89E!important;font-weight:750}
+.nav button.active .v35-tab-icon{transform:scale(1.12);filter:drop-shadow(0 0 6px rgba(244,209,139,.38))}
+.nav button:active .v35-tab-icon{transform:scale(.93)}
+.nav button:focus-visible{outline:2px solid #f2d49a;outline-offset:-3px}
+.nav button.center .v35-tab-icon{width:30px;height:30px;margin:0!important;background:none!important;border:0}
+.v35-liquid-lens{position:absolute;top:6px;left:50%;width:calc((100% - 10px)/5 - 3px);height:calc(100% - 12px);border-radius:22px;pointer-events:none;z-index:1;transform:translateX(-50%);background:radial-gradient(ellipse at 24% 10%,rgba(255,255,255,.43),transparent 42%),linear-gradient(140deg,rgba(224,244,236,.24),rgba(171,211,207,.07) 44%,rgba(194,158,98,.2) 92%);border:1px solid rgba(246,235,208,.45);box-shadow:inset 1px 2px 2px rgba(255,255,255,.35),inset -2px -3px 4px rgba(0,0,0,.2),0 2px 12px rgba(0,0,0,.2),0 0 14px rgba(210,184,127,.13);-webkit-backdrop-filter:blur(9px) saturate(190%);backdrop-filter:blur(9px) saturate(190%);will-change:transform}
+.v35-liquid-lens::before{content:'';position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.24);background:conic-gradient(from 208deg at 52% 47%,transparent 0deg,rgba(154,231,219,.22) 65deg,transparent 115deg,rgba(248,218,160,.28) 235deg,transparent 310deg);opacity:.72;mix-blend-mode:screen;pointer-events:none}
+.v35-lens-core{position:absolute;inset:3px;border-radius:19px;box-shadow:inset 0 1px 2px rgba(255,255,255,.18),inset 0 -2px 4px rgba(0,0,0,.2);background:linear-gradient(155deg,rgba(255,255,255,.1),transparent 55%,rgba(223,192,130,.08))}
+body.dark .nav{background:linear-gradient(160deg,rgba(46,64,63,.9),rgba(5,19,23,.96));border-color:rgba(235,206,150,.34)}
+@supports not ((-webkit-backdrop-filter:blur(2px)) or (backdrop-filter:blur(2px))){.nav{background:#14272b}.v35-liquid-lens{background:linear-gradient(145deg,#3c5655,#223c3d)}}
+@media(max-width:360px){.nav{width:calc(100% - 12px);border-radius:24px}.nav button .v35-tab-label{font-size:9px}.nav button .v35-tab-icon .ui-icon{width:23px;height:23px}}
+@media(prefers-reduced-motion:reduce){.nav button,.nav button .v35-tab-icon{transition:none}.v35-liquid-lens{will-change:auto}}
+@media print{.nav{display:none!important}}
